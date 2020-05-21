@@ -1,0 +1,30 @@
+{
+  "name": "commander-bot",
+  "version": "1.0.0",
+  "description": "a bot that plays resistance on discord",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/myou2k/CommanderBot.git"
+  },
+  "keywords": [
+    "Node",
+    "JS",
+    "API",
+    "Bot",
+    "Discord"
+  ],
+  "author": "Michael You",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/myou2k/CommanderBot/issues"
+  },
+  "homepage": "https://github.com/myou2k/CommanderBot#readme",
+  "dependencies": {
+    "discord.js": "^12.2.0",
+    "dotenv": "^8.2.0"
+  }
+}
