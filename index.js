@@ -45,6 +45,10 @@ Bot.on('message', msg => {
             msg.reply('No game created')
             return
         }
+        if(Session.started){
+            msg.reply('Game has already started')
+            return
+        }
         reply = Session.join(msg.author)
         if(reply){
             msg.channel.send(reply)
@@ -54,6 +58,10 @@ Bot.on('message', msg => {
     if(msg.content === '!start'){
         if(!Session){
             msg.reply('No game created')
+            return
+        }
+        if(Session.started){
+            msg.reply('Game has already started')
             return
         }
         if(msg.author != Session.host){
@@ -68,10 +76,7 @@ Bot.on('message', msg => {
         }
 
         msg.channel.send('Game is starting...')
-    }
-
-    if(msg.content === '!trigger'){
-        msg.channel.send('!ping')
+        Session.start()
     }
 })
 

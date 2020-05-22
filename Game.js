@@ -1,3 +1,6 @@
+const generateMissions = require('./Mission')
+const generateRoles = require('./Role')
+
 class Game {
     constructor(host, client){
         this.client = client
@@ -5,6 +8,7 @@ class Game {
         this.lobby = {}
         this.lobby[this.host.username] = this.host
         this.round = 0
+        this.started = false
     }
 
     join(player){
@@ -23,14 +27,15 @@ class Game {
     */
 
     config(numPlayers){
-        
+        this.missions = generateMissions(numPlayers)
+        this.roles = generateRoles(numPlayers)
     }
 
     start(){
         numPlayers = Object.keys(this.lobby).length
-        this.config(numPlayers)
+        this.config()
+        this.started = true
     }
-
 }
 
 module.exports = Game
