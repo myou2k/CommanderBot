@@ -18,17 +18,17 @@ Bot.on('message', msg => {
 
     if(msg.content === '!create'){
         if(Session){
-            msg.reply('There\'s already a game ging in session')
+            msg.reply('There\'s already a game created')
             return
         }
         Session = new Game(msg.author, Bot)
-        reply = `${msg.author}'s game is now in session`
+        reply = `${msg.author}'s game is now created`
         msg.channel.send(reply)
     }
     
     if(msg.content === '!lobby'){
         if(!Session){
-            msg.reply('No game in session')
+            msg.reply('No game created')
             return
         }
 
@@ -42,13 +42,36 @@ Bot.on('message', msg => {
 
     if(msg.content === '!join'){
         if(!Session){
-            msg.reply('No game in session')
+            msg.reply('No game created')
             return
         }
         reply = Session.join(msg.author)
         if(reply){
             msg.channel.send(reply)
         }
+    }
+
+    if(msg.content === '!start'){
+        if(!Session){
+            msg.reply('No game created')
+            return
+        }
+        if(msg.author != Session.host){
+            msg.reply('Only the host can start the game')
+            return
+        }
+
+        numPlayers = Object.keys(Session.lobby).length
+        if(5 > numPlayers > 10){
+            msg.reply('You can only start with 5 to 10 players')
+            return
+        }
+
+        msg.channel.send('Game is starting...')
+    }
+
+    if(msg.content === '!trigger'){
+        msg.channel.send('!ping')
     }
 })
 
