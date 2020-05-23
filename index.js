@@ -1,6 +1,7 @@
 require('dotenv').config()
 
 const Game = require('./Game')
+// const Player = require('./Player')
 
 const Discord = require('discord.js')
 const Bot = new Discord.Client()
@@ -22,7 +23,7 @@ Bot.on('message', msg => {
             return
         }
         Session = new Game(msg.author, Bot)
-        reply = `${msg.author}'s game is now created`
+        reply = `${msg.author.username}'s game is now created`
         msg.channel.send(reply)
     }
     
@@ -33,7 +34,7 @@ Bot.on('message', msg => {
         }
 
         let playerList = []
-        for(player in Session.lobby){
+        for(let player in Session.lobby){
             playerList.push(player)
         }
         reply = `${playerList.join(', ')} ${playerList.length > 1 ? 'are' : 'is'} playing right now`
@@ -77,6 +78,10 @@ Bot.on('message', msg => {
 
         msg.channel.send('Game is starting...')
         Session.start()
+    }
+
+    if(msg.content === '!test'){
+        Session.test()
     }
 })
 

@@ -1,7 +1,17 @@
 class Role {
-    constructor(){
+    constructor(isGood, roleName, roleId){
         this.isGood = isGood
         this.roleName = roleName
+
+        /*
+        Resistance Members : g (good)
+        Spy: 'e' (evil)
+        Commander: 'c'
+        Bodyguard : 'bg'
+        Spy Commander : 'ec' (evil commander)
+        */
+
+        this.roleId = roleId
     }
 }
 
@@ -11,15 +21,15 @@ function generateRoles(numPlayers){
     let roleList = []
 
     for(i = 0; i < numGood - 2; i++){
-        roleList.push(new Role(true, 'A Reistance Member'))
+        roleList.push(new Role(true, 'a Resistance Member', 'g'))
     }
     for(i = 0; i < numEvil - 1; i++){
-        roleList.push(new Role(false, 'Spy'))
+        roleList.push(new Role(false, 'a Spy', 'e'))
     }
 
-    roleList.push(new Role(true, 'The Reistance Commander'))
-    roleList.push(new Role(true, 'The Reistance Bodyguard'))
-    roleList.push(new Role(false, 'The Spy Commander'))
+    roleList.push(new Role(true, 'the Resistance Commander', 'c'))
+    roleList.push(new Role(true, 'the Resistance Bodyguard', 'bg'))
+    roleList.push(new Role(false, 'the Spy Commander', 'ec'))
 
     return roleList
 }
