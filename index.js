@@ -22,7 +22,7 @@ Bot.on('message', msg => {
             msg.reply('There\'s already a game created')
             return
         }
-        Session = new Game(msg.author, Bot)
+        Session = new Game(msg.author, Bot, msg.channel)
         reply = `${msg.author.username}'s game is now created`
         msg.channel.send(reply)
     }
@@ -86,4 +86,10 @@ Bot.on('message', msg => {
 })
 
 Bot.login(process.env.TOKEN)
+
+// TestBots
+
+const startTestBot = require('./testBots')
+startTestBot()
+
 
