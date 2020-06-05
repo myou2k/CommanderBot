@@ -65,19 +65,24 @@ Bot.on('message', msg => {
             msg.reply('Game has already started')
             return
         }
-        if(msg.author != Session.host){
+        if(msg.author.username != Session.host){
             msg.reply('Only the host can start the game')
             return
         }
 
-        numPlayers = Object.keys(Session.lobby).length
-        if(5 > numPlayers > 10){
+        let numPlayers = Object.keys(Session.lobby).length
+        console.log(numPlayers)
+        if(5 > numPlayers || numPlayers > 10){
             msg.reply('You can only start with 5 to 10 players')
             return
         }
 
         msg.channel.send('Game is starting...')
         Session.start()
+    }
+
+    if(msg.content === '!end'){
+        Session = null
     }
 
     if(msg.content === '!test'){
@@ -89,7 +94,7 @@ Bot.login(process.env.TOKEN)
 
 // TestBots
 
-const startTestBot = require('./testBots')
-startTestBot()
+// const startTestBot = require('./testBots')
+// startTestBot()
 
 

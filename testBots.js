@@ -17,8 +17,8 @@ const startTestBots = () => {
       msg.channel.send(`${echo}`)
     }
 
-    if(msg.content.channel.type === 'dm'){
-        dmChannel = msg.content.channel
+    if(msg.channel.type === 'dm'){
+        dmChannel1 = msg.channel
         console.log('Tester1', msg.content)
     }
 
@@ -45,8 +45,8 @@ const startTestBots = () => {
       msg.channel.send(`${echo}`)
     }
 
-    if(msg.content.channel.type === 'dm'){
-        dmChannel2 = msg.content.channel
+    if(msg.channel.type === 'dm'){
+        dmChannel2 = msg.channel
         console.log('Tester2', msg.content)
     }
 
@@ -73,8 +73,8 @@ const startTestBots = () => {
       msg.channel.send(`${echo}`)
     }
 
-    if(msg.content.channel.type === 'dm'){
-        dmChannel3 = msg.content.channel
+    if(msg.channel.type === 'dm'){
+        dmChannel3 = msg.channel
         console.log('Tester3', msg.content)
     }
 
@@ -101,8 +101,8 @@ const startTestBots = () => {
       msg.channel.send(`${echo}`)
     }
 
-    if(msg.content.channel.type === 'dm'){
-        dmChannel4 = msg.content.channel
+    if(msg.channel.type === 'dm'){
+        dmChannel4 = msg.channel
         console.log('Tester4', msg.content)
     }
 
