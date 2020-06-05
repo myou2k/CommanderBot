@@ -392,27 +392,27 @@ class Game {
     await this.channel.send(`Use the !end command to finish the game`);
   }
 
-  async test() {
-        this._config(7);
-        console.log(this._roles);
-        this._assignRoles();
-        console.log(this.roles);
-        this.roleListById = {
-          'e': ["adam", "bob"],
-          'g': ["cat", "david"],
-          'bg': ["esther"],
-          'c': ["frank"],
-          'ec': ["myou2k"],
-        };
-        this._dmRoles();
-        this.lobby = {
-            'myou2k': 'mock',
-            'adam': 'mock',
-            'frank': 'mock',
-        }
-        this.roundsPassed = 3
-        this.end()
-      }
+  // async test() {
+  //       this._config(7);
+  //       console.log(this._roles);
+  //       this._assignRoles();
+  //       console.log(this.roles);
+  //       this.roleListById = {
+  //         'e': ["adam", "bob"],
+  //         'g': ["cat", "david"],
+  //         'bg': ["esther"],
+  //         'c': ["frank"],
+  //         'ec': ["myou2k"],
+  //       };
+  //       this._dmRoles();
+  //       this.lobby = {
+  //           'myou2k': 'mock',
+  //           'adam': 'mock',
+  //           'frank': 'mock',
+  //       }
+  //       this.roundsPassed = 3
+  //       this.end()
+  //     }
 }
 
 module.exports = Game;
