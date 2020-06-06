@@ -1,5 +1,7 @@
 # CommanderBot
 
+Play Resistance/Avalon with your friends over Discord! 
+
 ## Commands
 
 * !create - Creates a game as the host
