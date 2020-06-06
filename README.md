@@ -1,6 +1,6 @@
 # CommanderBot
 
-##Commands
+## Commands
 
 * !create - Creates a game as the host
 * !join - Joins a game currently in session
