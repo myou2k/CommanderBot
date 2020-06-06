@@ -88,6 +88,7 @@ Bot.on('message', msg => {
     if(msg.content === '!test'){
         Session.test()
     }
+
 })
 
 Bot.login(process.env.TOKEN)

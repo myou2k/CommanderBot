@@ -392,7 +392,7 @@ class Game {
     await this.channel.send(`Use the !end command to finish the game`);
   }
 
-  // async test() {
+  async test() {
   //       this._config(7);
   //       console.log(this._roles);
   //       this._assignRoles();
@@ -412,7 +412,7 @@ class Game {
   //       }
   //       this.roundsPassed = 3
   //       this.end()
-  //     }
+  }
 }
 
 module.exports = Game;
